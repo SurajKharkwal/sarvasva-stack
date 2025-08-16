@@ -1,41 +1,33 @@
 {
-  "name": "@build-app/next-pages",
-  "version": "0.0.3",
-  "description": "A helper for sarvasva cli",
+  "name": "@sarvasva-stack/next-pages",
+  "version": "0.0.1",
+  "description": "A helper for @sarvasva-stack",
   "type": "module",
   "main": "./dist/index.js",
   "exports": {
     ".": "./dist/index.js"
   },
   "files": [
-    "./dist/index.js"
+    "dist"
   ],
   "bin": {
-    "@build-app/next-pages": "./dist/index.js"
-  },
-  "keywords": [
-    "sparse-clone",
-    "cli",
-    "next.js",
-    "sarvasva"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SurajKharkwal/sarvasva.git"
+    "next-app": "./dist/index.js"
   },
   "author": "Suraj Kharkwal",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SurajKharkwal/sarvasva-stack.git"
+  },
   "scripts": {
-    "dev": "bun index.ts",
-    "start": "bun ./dist/index.js",
+    "dev": "bun ./index.ts",
     "clean": "rm -rf ./dist/",
-    "build": "bun run clean && bun build index.ts --outdir dist --minify --bundle --target=node --banner.node=\"#!/usr/bin/env node\"",
-    "prerelease": "bun run clean && bun run build",
+    "build": "bun run clean && bun build index.ts --outdir dist --minify --bundle --target=node",
+    "prerelease": "bun run build",
     "release": "bun publish --access public"
   },
   "devDependencies": {
-    "@repo/core": "*",
     "@types/bun": "latest",
-    "typescript": "^5.0.0"
+    "@repo/core": "*",
+    "typescript": "^5"
   }
 }

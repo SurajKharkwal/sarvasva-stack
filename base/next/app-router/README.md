@@ -10,7 +10,7 @@ It generates a complete Next.js starter app with the following features:
 - ORM
 
 ```
-npx @sarvasva-stack/next-app -h   # Now select the flags as you want
+npx @sarvasva-stack/next-apps -h   # Now select the flags as you want
 ```
 
 Feel free to contribute and help me improve this project! 🚀

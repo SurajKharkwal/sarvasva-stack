@@ -1,9 +1,7 @@
 #!/usr/bin/env node
-import { Command, z } from "@repo/core";
+import { program, z } from "@repo/core";
 import { AUTH, DATABASE, ESLINT, ORM, PM, schema, THEME, UI } from "@/utils";
 import { main } from "@/main";
-
-const program = new Command();
 
 program
   .name("Sarvasva")

@@ -8,26 +8,26 @@ import { mongodbSetup } from "@/db/mongodb/mongodb.setup";
 import { standardSetup } from "@/eslint/standard/standard.setup";
 import { prismaSetup } from "@/orm/prisma/prisma.setup";
 import { drizzleSetup } from "@/orm/drizzle/drizzle.setup";
-import { echo, installPackages, runScripts } from "@repo/core";
+import { echo, install, runx } from "@repo/core";
 import { sparseClone } from "@repo/core";
-import type { SCRIPTS } from "@repo/core";
 import path from "path";
 import type { OPTIONS } from "./utils";
 import { appLayout } from "extra/common/_app";
 
 let dependencies: string[] = [];
 let devDependencies: string[] = [];
-let scripts: SCRIPTS[] = [];
+let exec: string[] = [];
 
 const storeData = (result?: {
   dependencies?: string[];
   devDependencies?: string[];
-  scripts?: SCRIPTS[];
+  exec?: string[];
 }) => {
   if (!result) return;
-  dependencies.push(...(result.dependencies ?? []));
-  devDependencies.push(...(result.devDependencies ?? []));
-  scripts.push(...(result.scripts ?? []));
+  if (result.dependencies?.length) dependencies.push(...result.dependencies);
+  if (result.devDependencies?.length)
+    devDependencies.push(...result.devDependencies);
+  if (result.exec?.length) exec.push(...result.exec);
 };
 
 const locate = {
@@ -47,8 +47,8 @@ export async function main(opts: OPTIONS) {
   const { appName, packageManager, auth, database, eslint, orm, theme, ui } =
     opts;
   await sparseClone(
-    "https://github.com/SurajKharkwal/sarvasva/",
-    "base/next/pages-routes/skeleton",
+    "https://github.com/SurajKharkwal/sarvasva-stack/",
+    "base/next/pages-routes/template",
     appName,
     { overrideDir: true, silent: true },
   );
@@ -83,6 +83,15 @@ export async function main(opts: OPTIONS) {
       appLayout(auth === "clerk", ui === "hero"),
     );
   // console.log(dependencies, devDependencies, scripts);
-  await installPackages(packageManager, appName, dependencies, devDependencies);
-  await runScripts(packageManager, appName, scripts);
+  await install(packageManager, devDependencies, {
+    dir: appName,
+    silent: true,
+    isDev: true,
+  });
+  await install(packageManager, dependencies, {
+    dir: appName,
+    silent: true,
+    isDev: false,
+  });
+  await runx(packageManager, exec, { dir: appName, silent: true });
 }

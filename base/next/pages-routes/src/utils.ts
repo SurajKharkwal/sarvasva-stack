@@ -6,7 +6,7 @@ export const AUTH = z.enum(["clerk"]);
 export const DATABASE = z.enum(["mysql", "postgresql", "sqlite", "mongodb"]);
 export const ORM = z.enum(["prisma", "drizzle"]);
 export const ESLINT = z.enum(["standard"]);
-export const PM = z.enum(["bun", "npm", "pnpm", "yarn"]);
+export const PM = z.enum(["bun", "npm", "pnpm"]);
 
 export const schema = z
   .object({
