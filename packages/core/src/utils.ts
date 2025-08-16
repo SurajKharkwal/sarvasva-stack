@@ -11,16 +11,19 @@ export async function echo(filePath: string, message: string, append = false) {
 
 const dependencies = {
   bun: "bun add",
+  pnpm: "pnpm add",
   npm: "npm install",
 };
 
 const devDependencies = {
   bun: "bun add -D",
+  pnpm: "pnpm add -D",
   npm: "npm install --save-dev",
 };
 
 const bin = {
   bun: "bunx",
+  pnpm: "pnpx",
   npm: "npx",
 };
 
@@ -44,6 +47,7 @@ export async function install(pm: PM, command: string | string[], opts?: OPTS) {
     console.error(
       `❌ Failed to install ${isDev ? "dev " : ""}dependencies: ${args.join(", ")}`,
     );
+    console.log(err, dir);
     process.exit(1);
   }
 }

@@ -12,6 +12,7 @@
     "@flyinghawk/sparse-clone": "^0.0.7",
     "@types/bun": "latest",
     "@types/cross-spawn": "^6.0.6",
+    "commander": "^14.0.0",
     "cross-spawn": "^7.0.6",
     "eslint": "^9.33.0",
     "execa": "^9.6.0",

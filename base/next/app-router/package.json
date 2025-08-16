@@ -1,0 +1,35 @@
+{
+  "name": "@sarvasva-stack/next-app",
+  "version": "0.0.1",
+  "description": "A helper for @sarvasva-stack",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "next-app": "./dist/index.js"
+  },
+  "author": "Suraj Kharkwal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SurajKharkwal/sarvasva.git"
+  },
+  "scripts": {
+    "dev": "bun ./index.ts",
+    "clean": "rm -rf ./dist/",
+    "build": "bun run clean && bun build index.ts --outdir dist --minify --bundle --target=node",
+    "prerelease": "bun run build",
+    "release": "bun publish --access public"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@repo/core": "*"
+  }
+}
