@@ -47,7 +47,7 @@ export async function install(pm: PM, command: string | string[], opts?: OPTS) {
     console.error(
       `❌ Failed to install ${isDev ? "dev " : ""}dependencies: ${args.join(", ")}`,
     );
-    console.log(err, dir);
+    console.log(err);
     process.exit(1);
   }
 }
@@ -69,5 +69,21 @@ export async function runx(
       console.error(`❌ Failed to run command: ${arg}`);
       process.exit(1);
     }
+  }
+}
+
+export async function preInstall(
+  pm: PM,
+  opts?: { silent: boolean; dir?: string },
+) {
+  const { silent = true, dir = process.cwd() } = opts || {};
+  try {
+    await execa(pm, ["install"], {
+      cwd: dir,
+      stdio: silent ? "ignore" : "inherit",
+    });
+  } catch (err) {
+    console.error(`❌ Failed to run command: ${pm} install`);
+    process.exit(1);
   }
 }

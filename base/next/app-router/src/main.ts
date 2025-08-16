@@ -12,6 +12,7 @@ import path from "path";
 import type { OPTIONS } from "./utils";
 import { echo, install, runx, sparseClone } from "@repo/core";
 import { layout } from "../extra/common/layout";
+import { preInstall } from "../../../../packages/core/src/utils";
 
 let dependencies: string[] = [];
 let devDependencies: string[] = [];
@@ -80,6 +81,7 @@ export async function main(opts: OPTIONS) {
     path.join(appName, "src/layout.tsx"),
     layout(auth === "clerk", ui === "hero"),
   );
+  await preInstall(packageManager, { dir: appName, silent: true });
   await install(packageManager, devDependencies, {
     dir: appName,
     silent: true,
