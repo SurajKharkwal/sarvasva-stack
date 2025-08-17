@@ -43,7 +43,7 @@ export const questions: PromptObject[] = [
     choices: [
       { title: "None", value: "none" },
       { title: "ShadCN", value: "shadcn" },
-      { title: "Hero UI / Next UI", value: "hero-next" },
+      { title: "Hero UI / Next UI", value: "hero" },
     ],
   },
   {
