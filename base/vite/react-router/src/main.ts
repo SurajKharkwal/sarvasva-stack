@@ -50,6 +50,12 @@ export async function main(opts: OPTIONS) {
     dir: appName,
     isDev: false,
   });
+
+  await install(packageManager, devDependencies, {
+    silent: true,
+    dir: appName,
+    isDev: true,
+  });
   await runx(packageManager, exec, {
     silent: true,
     dir: appName,

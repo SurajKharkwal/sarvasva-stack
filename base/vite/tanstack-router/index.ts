@@ -28,8 +28,8 @@ program
     "after",
     `
 Examples:
-  $ @sarvasva-app/vite-tanstack -u shadcn -e standard -t neutral
-  $ @sarvasva-app/vite-tanstack --ui shadcn --eslint standard --package-manager bun --theme neutral
+  $ @sarvasva-stack/tanstack-router -u shadcn -e standard -t neutral
+  $ @sarvasva-stack/tanstack-router --ui shadcn --eslint standard --package-manager bun --theme neutral
 `,
   )
   .action(async (options) => {

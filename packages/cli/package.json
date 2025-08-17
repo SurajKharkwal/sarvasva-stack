@@ -1,7 +1,7 @@
 {
-  "name": "@sarvasva-stack/tanstack-router",
-  "version": "0.0.1",
-  "description": "A helper for @sarvasva-stack",
+  "name": "@sarvasva-stack/gen",
+  "version": "0.0.2",
+  "description": "A CLI tool for generating full-stack starter templates",
   "type": "module",
   "main": "./dist/index.js",
   "exports": {
@@ -11,7 +11,7 @@
     "dist"
   ],
   "bin": {
-    "tanstack-router": "./dist/index.js"
+    "next-app": "./dist/index.js"
   },
   "author": "Suraj Kharkwal",
   "repository": {

@@ -1,13 +1,10 @@
 # SARVASVA Helper CLI
 
-A helper CLI for the main CLI [@sarvasva-app/init](https://www.npmjs.com/package/@sarvasva-app/init).
+A helper CLI for the main CLI [@sarvasva-stack/init](https://www.npmjs.com/package/@sarvasva-stack/init).
 
 It generates a complete Reactjs (vite) starter app with the following features:
 
 - React-Router
-- Authentication
-- Database
 - UI library
-- ORM
 
 Feel free to contribute and help me improve this project! 🚀
