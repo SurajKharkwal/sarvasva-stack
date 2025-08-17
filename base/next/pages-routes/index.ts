@@ -34,8 +34,8 @@ program
     "after",
     `
 Examples:
-  $ @sarvasva-app/next-pages -u shadcn -t neutral -a clerk -d postgres -o prisma -e standard -p yarn
-  $ @sarvasva-app/next-pages --ui shadcn  --theme neurtal --auth clerk --package-manager bun --databse mysql  --orm prisma
+  $ @sarvasva-stack/next-pages -u shadcn -t neutral -a clerk -d postgres -o prisma -e standard -p bun 
+  $ @sarvasva-stack/next-pages --ui shadcn  --theme neurtal --auth clerk --package-manager bun --databse mysql  --orm prisma
 `,
   )
   .action(async (options) => {

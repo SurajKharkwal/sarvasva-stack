@@ -48,6 +48,7 @@ export function generatePrismaSchema(db: ORM_DB) {
   return `// This file was generated automatically
 generator client {
   provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {

@@ -1,6 +1,6 @@
 {
   "name": "@sarvasva-app/react-router",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "A helper for sarvasva cli",
   "type": "module",
   "main": "./dist/index.js",

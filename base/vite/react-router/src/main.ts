@@ -1,23 +1,22 @@
 import { heroSetup } from "@/ui/hero/hero.setup";
 import { shadcnSetup } from "@/ui/shadcn/shadcn.setup";
-import { installPackages, runScripts, sparseClone } from "@repo/core";
-import type { SCRIPTS } from "@/types";
+import { install, runx, sparseClone } from "@repo/core";
 import { standardSetup } from "@/eslint/standard/standard.setup";
 import type { OPTIONS } from "./utils";
 
 let dependencies: string[] = [];
 let devDependencies: string[] = [];
-let scripts: SCRIPTS[] = [];
+let exec: string[] = [];
 
 const storeData = (result?: {
   dependencies?: string[];
   devDependencies?: string[];
-  scripts?: SCRIPTS[];
+  exec?: string[];
 }) => {
   if (!result) return;
   dependencies.push(...(result.dependencies ?? []));
   devDependencies.push(...(result.devDependencies ?? []));
-  scripts.push(...(result.scripts ?? []));
+  exec.push(...(result.exec ?? []));
 };
 
 const locate = {
@@ -28,7 +27,7 @@ const locate = {
 export async function main(opts: OPTIONS) {
   const { appName, packageManager, eslint, theme, ui } = opts;
   await sparseClone(
-    "https://github.com/SurajKharkwal/sarvasva/",
+    "https://github.com/SurajKharkwal/sarvasva-stack/",
     "base/vite/react-router/skeleton",
     appName,
     { silent: true, overrideDir: true },
@@ -46,7 +45,14 @@ export async function main(opts: OPTIONS) {
     storeData(res);
   }
 
-  await installPackages(packageManager, appName, dependencies, devDependencies);
-  await runScripts(packageManager, appName, scripts);
+  await install(packageManager, dependencies, {
+    silent: true,
+    dir: appName,
+    isDev: false,
+  });
+  await runx(packageManager, exec, {
+    silent: true,
+    dir: appName,
+  });
   console.log("Project setup complete!");
 }
