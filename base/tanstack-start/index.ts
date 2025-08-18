@@ -35,8 +35,8 @@ program
     "after",
     `
 Examples:
-  $ @sarvasva-stack/next-pages -u shadcn -t neutral -a clerk -d postgres -o prisma -e standard -p bun 
-  $ @sarvasva-stack/next-pages --ui shadcn  --theme neurtal --auth clerk --package-manager bun --databse mysql  --orm prisma
+  $ @sarvasva-stack/tanstack-start -u shadcn -t neutral -a clerk -d postgres -o prisma -e standard -p yarn
+  $ @sarvasva-stack/tanstack-start --ui shadcn  --theme neurtal --auth clerk --package-manager bun --databse mysql  --orm prisma
 `,
   )
   .action(async (options) => {
@@ -58,4 +58,5 @@ Examples:
       process.exit(1);
     }
   });
+
 program.parse(process.argv);

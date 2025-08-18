@@ -1,6 +1,6 @@
 {
   "name": "@sarvasva-stack/tanstack-router",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "A helper for @sarvasva-stack",
   "type": "module",
   "main": "./dist/index.js",

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { Command } from "commander";
 import { main } from "@/main";
 import { ESLINT, PM, schema, THEME, UI } from "@/utils";

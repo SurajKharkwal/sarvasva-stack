@@ -105,7 +105,7 @@ export const questions: PromptObject[] = [
     name: "packageManager",
     message: "Choose a package manager:",
     choices: [
-      { title: "bun", value: "bun" },
+      { title: "bun (Recommended)", value: "bun" },
       { title: "npm", value: "npm" },
       { title: "pnpm", value: "pnpm" },
     ],

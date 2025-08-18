@@ -27,8 +27,8 @@ const locate = {
 export async function main(opts: OPTIONS) {
   const { appName, packageManager, eslint, theme, ui } = opts;
   await sparseClone(
-    "https://github.com/SurajKharkwal/sarvasva/",
-    "base/vite/tanstack-router/skeleton",
+    "https://github.com/SurajKharkwal/sarvasva-stack/",
+    "base/vite/tanstack-router/template",
     appName,
     { silent: true, overrideDir: true },
   );

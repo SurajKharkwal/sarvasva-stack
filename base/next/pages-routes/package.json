@@ -1,6 +1,6 @@
 {
   "name": "@sarvasva-stack/next-pages",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A helper for @sarvasva-stack",
   "type": "module",
   "main": "./dist/index.js",

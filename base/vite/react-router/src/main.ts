@@ -28,7 +28,7 @@ export async function main(opts: OPTIONS) {
   const { appName, packageManager, eslint, theme, ui } = opts;
   await sparseClone(
     "https://github.com/SurajKharkwal/sarvasva-stack/",
-    "base/vite/react-router/skeleton",
+    "base/vite/react-router/template",
     appName,
     { silent: true, overrideDir: true },
   );

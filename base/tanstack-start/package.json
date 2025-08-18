@@ -1,6 +1,6 @@
 {
-  "name": "@sarvasva-stack/next-apps",
-  "version": "0.0.6",
+  "name": "@sarvasva-stack/tanstack-start",
+  "version": "0.0.1",
   "description": "A helper for @sarvasva-stack",
   "type": "module",
   "main": "./dist/index.js",

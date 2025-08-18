@@ -8,7 +8,7 @@ async function main() {
   const { cmd, args } = generateCommand(data as any);
 
   const spinner = ora({
-    text: `Running ${cmd}...`,
+    text: `Running ${cmd} ${args.join(" ")}...`,
     spinner: spinners.dots,
   }).start();
 
@@ -22,4 +22,3 @@ async function main() {
 }
 
 main().catch((err) => console.error(err));
-

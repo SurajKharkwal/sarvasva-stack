@@ -1,4 +1,4 @@
-#! /usr/bin/env bun
+#!/usr/bin/env node
 
 import { program, z } from "@repo/core";
 import { AUTH, DATABASE, ESLINT, ORM, PM, schema, THEME, UI } from "@/utils";
