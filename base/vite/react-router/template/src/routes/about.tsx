@@ -1,6 +1,5 @@
 import ProjectCard from "@/components/projects.card";
 import DefaultLayout from "@/layouts/defaults";
-import { createFileRoute } from "@tanstack/react-router";
 
 const fallback = {
   profile: {
@@ -30,11 +29,7 @@ const fallback = {
   openFor: "Web Development • System-Level Engineering • Linux & Open Source",
 };
 
-export const Route = createFileRoute("/about")({
-  component: About,
-});
-
-function About() {
+export default function AboutPage() {
   const { profile, work, openFor } = fallback;
 
   return (

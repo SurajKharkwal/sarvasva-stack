@@ -11,7 +11,6 @@ import { drizzleSetup } from "@/orm/drizzle/drizzle.setup";
 import path from "path";
 import type { OPTIONS } from "./utils";
 import { echo, install, runx, sparseClone } from "@repo/core";
-import { layout } from "../extra/common/layout";
 
 let dependencies: string[] = [];
 let devDependencies: string[] = [];
